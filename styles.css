@@ -1,92 +1,162 @@
-/* ===== ESTILO GENERAL ===== */
+/* ==========================
+   PALETA INSPIRADA EN IMAGEN
+========================== */
+:root{
+  --bg-main:#42125c;
+  --bg-soft:#371b47;
+  --card-bg:rgba(255,255,255,0.08);
+  --border:rgba(199,125,255,.35);
+
+  --text-main:#201331;
+  --text-muted:#4c1839;
+
+  --accent:#c77dff;
+  --accent-strong:#ff4fd8;
+  --ok:#22c55e;
+  --error:#fb7185;
+  --glow:rgba(199,125,255,.6);
+}
+
+/* ==========================
+   ESTILO GENERAL
+========================== */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f0e9d3;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(199,125,255,.15), transparent 60%),
+    linear-gradient(180deg, var(--bg-soft), var(--bg-main));
   margin: 0;
   padding: 0;
+  color: var(--text-main);
 }
 
-/* CONTENEDOR */
+/* ==========================
+   CONTENEDOR
+========================== */
 .formulario-bootstrap {
   max-width: 600px;
-  margin: 40px auto;
+  margin: 48px auto;
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
 }
 
-/* TÍTULOS */
+/* ==========================
+   TÍTULOS
+========================== */
 h1 {
-  color: #111827;
+  color: var(--text-main);
+  font-weight: 800;
+  letter-spacing: .5px;
 }
 
-/* DESCRIPCIÓN */
+/* ==========================
+   DESCRIPCIÓN
+========================== */
 .descripcion {
-  margin-bottom: 15px;
-  color: #374151;
+  margin-bottom: 16px;
+  color: var(--text-muted);
 }
 
-/* INPUTS BOOTSTRAP PERSONALIZADOS */
+/* ==========================
+   INPUTS BOOTSTRAP
+========================== */
 .form-control,
 .form-select,
 .input-group-text {
-  border-radius: 6px;
-  border: 1px solid #9ca3af;
+  background: rgba(255,255,255,.06);
+  color: var(--text-main);
+  border-radius: 10px;
+  border: 1px solid var(--border);
 }
 
-/* FOCUS */
+.form-control::placeholder {
+  color: rgba(213,182,240,.6);
+}
+
+/* ==========================
+   FOCUS
+========================== */
 .form-control:focus,
 .form-select:focus {
-  border-color: #2563eb;
-  box-shadow: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(199,125,255,.35);
+  background: rgba(255,255,255,.08);
 }
 
-/* VALIDACIÓN */
+/* ==========================
+   VALIDACIÓN
+========================== */
 .form-control:valid,
 .form-select:valid {
-  border-color: #16a34a;
+  border-color: var(--ok);
 }
 
 .form-control:invalid,
 .form-select:invalid {
-  border-color: #dc2626;
+  border-color: var(--error);
 }
 
-/* CHECKBOX */
+/* ==========================
+   CHECKBOX
+========================== */
+.form-check-input {
+  background-color: transparent;
+  border: 1px solid var(--border);
+}
+
 .form-check-input:checked {
-  background-color: #2563eb;
-  border-color: #2563eb;
+  background-color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--glow);
 }
 
-/* BOTONES */
+/* ==========================
+   BOTONES
+========================== */
 .btn-primary {
-  background-color: #2563eb;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   border: none;
+  color: #180018;
+  font-weight: 700;
+  box-shadow: 0 0 18px var(--glow);
 }
 
 .btn-primary:hover {
-  background-color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px var(--glow);
 }
 
 .btn-secondary {
-  background-color: #9ca3af;
-  border: none;
+  background: rgba(255,255,255,.08);
+  color: var(--text-main);
+  border: 1px solid var(--border);
 }
 
 .btn-secondary:hover {
-  background-color: #6b7280;
+  background: rgba(255,255,255,.14);
 }
 
-/* ===== BOTÓN PDF ===== */
+/* ==========================
+   BOTÓN PDF
+========================== */
 .btn-pdf {
-  background-color: #2563eb;
-  color: #ffffff;
-  font-weight: bold;
-  padding: 10px 18px;
-  border-radius: 8px;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #180018;
+  font-weight: 800;
+  padding: 12px 22px;
+  border-radius: 999px;
   text-decoration: none;
+  box-shadow: 0 0 22px var(--glow);
 }
 
 .btn-pdf:hover {
-  background-color: #1e40af;
-  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px var(--glow);
 }
 
 
